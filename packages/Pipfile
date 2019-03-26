@@ -8,7 +8,10 @@ verify_ssl = true
 [packages]
 django = "*"
 djangorestframework = "*"
+facebook-sdk = "*"
 django-rest-auth = {extras = ["with_social"],version = "*"}
+django-allauth = "*"
+mysqlclient = "*"
 
 [requires]
 python_version = "3.6"

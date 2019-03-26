@@ -38,12 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #third
+    # third
     'rest_framework',
     'rest_framework.authtoken',
     'allauth',
     'allauth.account',
     'rest_auth.registration',
+    # apps
+    'accounts'
 ]
 SITE_ID = 1
 
@@ -83,9 +85,12 @@ WSGI_APPLICATION = 'monkeyFit.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db/database.db'),
-    }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '',
+        'HOST': '',
+        'USER': '',
+        'PASSWORD': ''
+    },
 }
 
 
@@ -108,30 +113,32 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-#DJANGO_REST_FRAMEWORK
+# DJANGO_REST_FRAMEWORK
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    ),
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated', )
+        'rest_framework.permissions.AllowAny',
+    )
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-PE'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Lima'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# AUTHENTICATION
+# AUTH_USER_MODEL = "accounts.User"
