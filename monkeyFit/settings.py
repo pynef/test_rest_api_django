@@ -25,7 +25,7 @@ SECRET_KEY = 's+s8-1m$+r0-i!y!b-+%&d^mc5b(b37f=b6cm9em54r7&=!1up'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -86,10 +86,10 @@ WSGI_APPLICATION = 'monkeyFit.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
-        'HOST': '',
-        'USER': '',
-        'PASSWORD': ''
+        'NAME': 'test8',
+        'HOST': 'localhost',
+        'USER': 'root',
+        'PASSWORD': 'nefistofeles42'
     },
 }
 
@@ -141,4 +141,5 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 # AUTHENTICATION
-# AUTH_USER_MODEL = "accounts.User"
+AUTH_USER_MODEL = "accounts.User"
+ACCOUNT_EMAIL_VERIFICATION = 'none'
